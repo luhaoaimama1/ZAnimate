@@ -17,22 +17,23 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/test1"
+            android:id="@+id/playTogether"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Together" />
 
         <Button
-            android:id="@+id/test2"
+            android:id="@+id/playSort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sequentially" />
+            android:text="playSort" />
+
 
         <Button
-            android:id="@+id/test3"
+            android:id="@+id/playPreset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="test3" />
+            android:text="播放预设" />
     </LinearLayout>
 
     <LinearLayout

@@ -1,8 +1,5 @@
 package zone.com.zanimate.object;
-import android.annotation.TargetApi;
-import android.os.Build;
 import android.view.animation.Interpolator;
-
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.PropertyValuesHolder;
@@ -11,8 +8,6 @@ import com.nineoldandroids.animation.ValueAnimator;
 import com.nineoldandroids.util.Property;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * Created by fuzhipeng on 16/8/23.
