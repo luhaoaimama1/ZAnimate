@@ -14,7 +14,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        还没弄好~
+	        compile 'com.github.luhaoaimama1:ZAnimate:1.0.0'
 	}
     
 
