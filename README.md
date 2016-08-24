@@ -11,11 +11,10 @@ Add it in your root build.gradle at the end of repositories:
 			maven { url "https://jitpack.io" }
 		}
 	}
+
 Step 2. Add the dependency
 
-	dependencies {
-	        compile 'com.github.luhaoaimama1:ZAnimate:1.0.0'
-	}
+> compile 'com.github.luhaoaimama1:ZAnimate:[Latest release](https://github.com/luhaoaimama1/ZAnimate/releases)'
     
 
 ##ObjectAnimatorProxy,ValueAnimatorProxyAbstract (可继承(return this是本类而不是父类)!,当你想用动画 写一个类库的时候可以用到此方法,参考 范例ViewWrap,ValueAnimatorProxy(这个是连续使用的))
