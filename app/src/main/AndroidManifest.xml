@@ -15,6 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="._2DActivity"></activity>
+        <activity android:name="._3DActivity"></activity>
     </application>
 
 </manifest>
