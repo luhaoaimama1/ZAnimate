@@ -2,7 +2,7 @@
 
 一个简约的动画封装工具类库。目的:使用更简单,更优雅~
 
-`2D库`:基本就是 `NineOldAndroids库变成连起来使用` `增加预设` `去掉重复参数` `连起来使用碰到继承改如何使用` [解决参考](https://github.com/luhaoaimama1/ZAnimate/blob/master/app/src/main/java/zone/com/zanimate/ViewWrap.java)
+`2D库`:`NineOldAndroids库变成连起来使用` `增加预设` `去掉重复参数` `连起来使用碰到继承改如何使用` [解决参考](https://github.com/luhaoaimama1/ZAnimate/blob/master/app/src/main/java/zone/com/zanimate/ViewWrap.java) [我的扫光库也使用到了](https://github.com/luhaoaimama1/Shine/blob/master/lightsweep/src/main/java/zone/com/lightsweep/ShineAnimator.java)
 >本README 主要介绍2D库；
 
 `3D库`:如何使用demo与使用 [请点此处](README-3D.md)

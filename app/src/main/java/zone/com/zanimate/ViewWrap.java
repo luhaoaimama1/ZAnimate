@@ -1,9 +1,6 @@
 package zone.com.zanimate;
-
 import android.view.View;
-
 import com.nineoldandroids.animation.ValueAnimator;
-
 import zone.com.zanimate.value.ValueAnimatorProxy;
 import zone.com.zanimate.value.ValueAnimatorProxyAbstract;
 
