@@ -1,20 +1,26 @@
 # ZAnimate
 
-一个简约的动画封装工具类库.目的:使用更简单
+一个简约的动画封装工具类库。目的:使用更简单,更优雅~
+
+`2D库`:基本就是 `NineOldAndroids库变成连起来使用` `增加预设` `去掉重复参数` `连起来使用碰到继承改如何使用` [解决参考](https://github.com/luhaoaimama1/ZAnimate/blob/master/app/src/main/java/zone/com/zanimate/ViewWrap.java)
+>本README 主要介绍2D库；
+
+`3D库`:如何使用demo与使用 [请点此处](README-3D.md)
 
 ### JicPack
 Add it in your root build.gradle at the end of repositories:
-
-	allprojects {
-		repositories {
-			...
-			maven { url "https://jitpack.io" }
-		}
-	}
-
+```
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+```
 Step 2. Add the dependency
 
 > compile 'com.github.luhaoaimama1:ZAnimate:[Latest release](https://github.com/luhaoaimama1/ZAnimate/releases)'
+    
     
 
 ##ObjectAnimatorProxy,ValueAnimatorProxyAbstract (可继承(return this是本类而不是父类)!,当你想用动画 写一个类库的时候可以用到此方法,参考 范例ViewWrap,ValueAnimatorProxy(这个是连续使用的))

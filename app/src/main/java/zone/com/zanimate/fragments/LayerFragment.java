@@ -113,6 +113,7 @@ public class LayerFragment extends Fragment implements View.OnClickListener {
                 }
             }
         });
+        cb.setChecked(true);
 
     }
 
@@ -319,7 +320,7 @@ public class LayerFragment extends Fragment implements View.OnClickListener {
     private void reset() {
         select = textViews[0];
         property = new Property();
-        cb.setChecked(false);
+        cb.setChecked(true);
         refresh();
         uiUpdate();
         textViews[0].setText("x:0");

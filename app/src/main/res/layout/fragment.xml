@@ -8,6 +8,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
@@ -22,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="reset" />
+            android:text="右侧面板\n全部reset" />
 
 
     </LinearLayout>
@@ -152,6 +153,7 @@
             android:id="@+id/et_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="100" />
+            android:text="100"
+            android:inputType="number" />
     </LinearLayout>
 </LinearLayout>
