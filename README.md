@@ -79,6 +79,7 @@ setTarget(在此类中AnimatorSetProxy )两种:
 ###five:
 ValueAnimator 用ValueAnimatorProxy;
 >默认插值器：AccelerateDecelerateInterpolator(by:androidnineold）
+
 ```
     valueAnimator = ValueAnimatorProxy.ofInt(0, 100)
             .setRepeatCount(ValueAnimator.INFINITE)
