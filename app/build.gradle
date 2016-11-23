@@ -27,5 +27,5 @@ dependencies {
     compile project(':library')
 //    compile 'com.github.luhaoaimama1:ZAnimate:1.0.0'
     compile 'com.github.luhaoaimama1:zone-sdk:1.0.83'
-    compile 'com.github.luhaoaimama1:ZView:1.0.1'
+    compile 'com.github.luhaoaimama1:ZView:1.0.35'
 }

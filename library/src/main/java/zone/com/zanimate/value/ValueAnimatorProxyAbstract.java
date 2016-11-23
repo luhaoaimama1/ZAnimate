@@ -115,6 +115,9 @@ public abstract class ValueAnimatorProxyAbstract<T extends ValueAnimatorProxyAbs
     }
 
 
+    /**
+     * @param value {@link ValueAnimator#INFINITE}
+     */
     public T setRepeatCount(int value) {
         source.setRepeatCount(value);
         checkChild();
@@ -126,12 +129,17 @@ public abstract class ValueAnimatorProxyAbstract<T extends ValueAnimatorProxyAbs
         return source.getRepeatCount();
     }
 
-
+    /**
+     *
+     * @param value {@link ValueAnimator#REVERSE}{@link ValueAnimator#RESTART}
+     * @return
+     */
     public T setRepeatMode(int value) {
         source.setRepeatMode(value);
         checkChild();
         return child;
     }
+
 
 
     public int getRepeatMode() {

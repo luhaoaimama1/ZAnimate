@@ -76,6 +76,21 @@ setTarget(在此类中AnimatorSetProxy )两种:
 
     ObjectAnimatorHelper.playPreset(ExampleAnimator.class).setTarget(tv).start();
 
+###five:
+ValueAnimator 用ValueAnimatorProxy;
+>默认插值器：AccelerateDecelerateInterpolator(by:androidnineold）
+```
+    valueAnimator = ValueAnimatorProxy.ofInt(0, 100)
+            .setRepeatCount(ValueAnimator.INFINITE)
+            .setDuration(1500)
+            .setRepeatMode(ValueAnimator.REVERSE)
+            .addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                @Override
+                public void onAnimationUpdate(ValueAnimator animation) {
+                    mProgressBar.setProgress((Integer) animation.getAnimatedValue());
+                }
+            }).start();
+```
 
 ##最后请注意:
 动画的两种监听(1.addUpdateListener 2.addListener)是 list收集的  所以多次add不会替换掉;

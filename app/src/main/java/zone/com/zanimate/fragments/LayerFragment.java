@@ -14,8 +14,6 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.nineoldandroids.animation.ValueAnimator;
-
 import and.utils.activity_fragment_ui.ToastUtils;
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -231,9 +229,9 @@ public class LayerFragment extends Fragment implements View.OnClickListener {
         switch (index) {
             case 0:
                 ValueAnimatorProxy.ofInt(property.getX(),
-                        property.getX() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        property.getX() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
                     @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
+                    public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator animation) {
                         int value = (int) animation.getAnimatedValue();
                         property.setX(value);
                         select.setText("x:" + value);
@@ -243,9 +241,9 @@ public class LayerFragment extends Fragment implements View.OnClickListener {
                 break;
             case 1:
                 ValueAnimatorProxy.ofInt((int) property.getY(),
-                        property.getY() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        property.getY() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
                     @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
+                    public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator animation) {
                         int value = (int) animation.getAnimatedValue();
                         property.setY(value);
                         select.setText("y:" + value);
@@ -256,9 +254,9 @@ public class LayerFragment extends Fragment implements View.OnClickListener {
                 break;
             case 2:
                 ValueAnimatorProxy.ofInt((int) property.getZ(),
-                        property.getZ() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        property.getZ() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
                     @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
+                    public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator animation) {
                         int value = (int) animation.getAnimatedValue();
                         property.setZ(value);
                         select.setText("z:" + value);
@@ -268,9 +266,9 @@ public class LayerFragment extends Fragment implements View.OnClickListener {
                 break;
             case 3:
                 ValueAnimatorProxy.ofInt((int) property.getxR(),
-                        property.getxR() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        property.getxR() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
                     @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
+                    public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator animation) {
                         int value = (int) animation.getAnimatedValue();
                         property.setxR(value);
                         select.setText("xR:" + value);
@@ -280,9 +278,9 @@ public class LayerFragment extends Fragment implements View.OnClickListener {
                 break;
             case 4:
                 ValueAnimatorProxy.ofInt((int) property.getyR(),
-                        property.getyR() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        property.getyR() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
                     @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
+                    public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator animation) {
                         int value = (int) animation.getAnimatedValue();
                         property.setyR(value);
                         select.setText("yR:" + value);
@@ -292,9 +290,9 @@ public class LayerFragment extends Fragment implements View.OnClickListener {
                 break;
             case 5:
                 ValueAnimatorProxy.ofInt((int) property.getzR(),
-                        property.getzR() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        property.getzR() + (isAdd ? number : -1 * number)).setDuration(duration).addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
                     @Override
-                    public void onAnimationUpdate(ValueAnimator animation) {
+                    public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator animation) {
                         int value = (int) animation.getAnimatedValue();
                         property.setzR(value);
                         select.setText("zR:" + value);

@@ -111,7 +111,7 @@ public class ObjectAnimatorProxy  implements Cloneable {
         return this;
     }
 
-    // ---------------------ValueAnimator-----------------------------
+    // ---------------------ValueAnimatorProxy-----------------------------
     public ObjectAnimatorProxy setIntValues(int... values) {
         source.setIntValues(values);
         return this;
@@ -148,6 +148,11 @@ public class ObjectAnimatorProxy  implements Cloneable {
     }
 
 
+    /**
+     *
+     * @param value   * @param value {@link ValueAnimator#INFINITE}
+     * @return
+     */
     public ObjectAnimatorProxy setRepeatCount(int value) {
         source.setRepeatCount(value);
         return this;
@@ -184,7 +189,10 @@ public class ObjectAnimatorProxy  implements Cloneable {
         return this;
     }
 
-
+    /**
+     * @param value {@link ValueAnimator#REVERSE}{@link ValueAnimator#RESTART}
+     * @return
+     */
     public ObjectAnimatorProxy setRepeatMode(int value) {
         source.setRepeatMode(value);
         return this;

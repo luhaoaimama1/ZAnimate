@@ -18,12 +18,6 @@ public class ValueAnimatorProxy extends ValueAnimatorProxyAbstract<ValueAnimator
         return new ValueAnimator();
     }
 
-    //这个就是测试 看看返回是不是Example 而不是  父类;
-    @Override
-    public ValueAnimatorProxy setRepeatCount(int value) {
-        return super.setRepeatCount(value);
-    }
-
 
     public static ValueAnimatorProxy ofFloat(float... values) {
         ValueAnimatorProxy result = new ValueAnimatorProxy();

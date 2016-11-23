@@ -3,15 +3,17 @@ package zone.com.zanimate;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.nineoldandroids.animation.ObjectAnimator;
+import com.nineoldandroids.animation.ValueAnimator;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import zone.com.zanimate.object.ObjectAnimatorHelper;
 import zone.com.zanimate.object.plugins.ExampleAnimator;
+import zone.com.zanimate.value.ValueAnimatorProxy;
 
 public class _2DActivity extends AppCompatActivity {
 
@@ -19,6 +21,9 @@ public class _2DActivity extends AppCompatActivity {
     TextView tv;
     @Bind(R.id.tv2)
     TextView tv2;
+    @Bind(R.id.progressBar)
+    ProgressBar mProgressBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +33,7 @@ public class _2DActivity extends AppCompatActivity {
         new ViewWrap().start();
     }
 
-    @OnClick({R.id.playTogether, R.id.playSort,R.id.playPreset})
+    @OnClick({R.id.playTogether, R.id.playSort, R.id.playPreset,R.id.valueAnimator})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.playTogether:
@@ -40,7 +45,30 @@ public class _2DActivity extends AppCompatActivity {
             case R.id.playPreset:
                 playPreset();
                 break;
+            case R.id.valueAnimator:
+                valueAnimator();
+                break;
         }
+        if (view.getId() != R.id.valueAnimator && valueAnimator != null)
+            valueAnimator.cancel();
+    }
+
+    private ValueAnimator valueAnimator;
+
+    private void valueAnimator() {
+        mProgressBar.setMax(100);
+        if (valueAnimator == null)
+            valueAnimator = ValueAnimatorProxy.ofInt(0, 100)
+                    .setRepeatCount(ValueAnimator.INFINITE)
+                    .setDuration(1500)
+                    .setRepeatMode(ValueAnimator.REVERSE)
+                    .addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                        @Override
+                        public void onAnimationUpdate(ValueAnimator animation) {
+                            mProgressBar.setProgress((Integer) animation.getAnimatedValue());
+                        }
+                    }).source();//可以直接start
+        valueAnimator.start();
     }
 
     private void playPreset() {
@@ -50,11 +78,11 @@ public class _2DActivity extends AppCompatActivity {
     private void playSort() {
         // 特定顺序的动画
         ObjectAnimatorHelper
-                .play(ObjectAnimatorHelper.ofFloatProxy( "translationX", 0F, 300F).setStartDelay(1000))
+                .play(ObjectAnimatorHelper.ofFloatProxy("translationX", 0F, 300F).setStartDelay(1000))
                 .with(ObjectAnimatorHelper.ofFloatProxy("alpha", 1F, 0.5F, 1F).setStartDelay(1000))//这个应该第一个after播放
-                .after(ObjectAnimatorHelper.ofFloat( "translationY", 0F, 300F))
+                .after(ObjectAnimatorHelper.ofFloat("translationY", 0F, 300F))
                 .after(ObjectAnimatorHelper.ofFloat("translationX", 300F, 0F))
-                .after(ObjectAnimatorHelper.ofFloat( "translationY", 300F, 0F),1000)
+                .after(ObjectAnimatorHelper.ofFloat("translationY", 300F, 0F), 1000)
                 .with(ObjectAnimatorHelper.ofFloat("alpha", 1F, 0.5F, 1F))
                 .setTarget(tv)
                 .setDuration(1000)
