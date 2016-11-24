@@ -5,10 +5,10 @@
 
 目的:使用更简单,更优雅~
 
-`2D库`: NineOldAndroids的`链接调用` `增加预设` `去掉重复参数`
+`2D库的优点`:  NineOldAndroids的 `链接调用` `增加预设` `去掉重复参数`
 >Tip:`链接调用碰到继承改如何使用` [解决参考](https://github.com/luhaoaimama1/ZAnimate/blob/master/app/src/main/java/zone/com/zanimate/ViewWrap.java) [我的扫光库也使用到了](https://github.com/luhaoaimama1/Shine/blob/master/lightsweep/src/main/java/zone/com/lightsweep/ShineAnimator.java)
 
-`3D库`: 如何使用demo与使用 [请点此处](README-3D.md)
+`3D库的demo使用简介`: 如何使用demo与使用 [请点此处](README-3D.md)
 
 ### JicPack
 Add it in your root build.gradle at the end of repositories:
