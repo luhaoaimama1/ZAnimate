@@ -12,6 +12,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import zone.com.zanimate.object.ObjectAnimatorHelper;
+import zone.com.zanimate.object.SortAnimator;
 import zone.com.zanimate.object.plugins.ExampleAnimator;
 import zone.com.zanimate.value.ValueAnimatorProxy;
 
@@ -33,7 +34,7 @@ public class _2DActivity extends AppCompatActivity {
         new ViewWrap().start();
     }
 
-    @OnClick({R.id.playTogether, R.id.playSort, R.id.playPreset,R.id.valueAnimator})
+    @OnClick({R.id.playTogether, R.id.playSort, R.id.playPreset, R.id.valueAnimator})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.playTogether:
@@ -51,6 +52,8 @@ public class _2DActivity extends AppCompatActivity {
         }
         if (view.getId() != R.id.valueAnimator && valueAnimator != null)
             valueAnimator.cancel();
+        if (view.getId() != R.id.playSort && sortAnimator != null)
+            sortAnimator.cancel();
     }
 
     private ValueAnimator valueAnimator;
@@ -68,25 +71,30 @@ public class _2DActivity extends AppCompatActivity {
                             mProgressBar.setProgress((Integer) animation.getAnimatedValue());
                         }
                     }).source();//可以直接start
-        valueAnimator.start();
+        if (!valueAnimator.isRunning())
+            valueAnimator.start();
     }
 
     private void playPreset() {
         ObjectAnimatorHelper.playPreset(ExampleAnimator.class).setTarget(tv).start();
     }
 
+    private SortAnimator sortAnimator;
+
     private void playSort() {
-        // 特定顺序的动画
-        ObjectAnimatorHelper
-                .play(ObjectAnimatorHelper.ofFloatProxy("translationX", 0F, 300F).setStartDelay(1000))
-                .with(ObjectAnimatorHelper.ofFloatProxy("alpha", 1F, 0.5F, 1F).setStartDelay(1000))//这个应该第一个after播放
-                .after(ObjectAnimatorHelper.ofFloat("translationY", 0F, 300F))
-                .after(ObjectAnimatorHelper.ofFloat("translationX", 300F, 0F))
-                .after(ObjectAnimatorHelper.ofFloat("translationY", 300F, 0F), 1000)
-                .with(ObjectAnimatorHelper.ofFloat("alpha", 1F, 0.5F, 1F))
-                .setTarget(tv)
-                .setDuration(1000)
-                .start();
+        if (sortAnimator == null)
+            // 特定顺序的动画
+            sortAnimator = ObjectAnimatorHelper
+                    .play(ObjectAnimatorHelper.ofFloatProxy("translationX", 0F, 300F).setStartDelay(1000))
+                    .with(ObjectAnimatorHelper.ofFloatProxy("alpha", 1F, 0.5F, 1F).setStartDelay(1000))//这个应该第一个after播放
+                    .after(ObjectAnimatorHelper.ofFloat("translationY", 0F, 300F))
+                    .after(ObjectAnimatorHelper.ofFloat("translationX", 300F, 0F))
+                    .after(ObjectAnimatorHelper.ofFloat("translationY", 300F, 0F), 1000)
+                    .with(ObjectAnimatorHelper.ofFloat("alpha", 1F, 0.5F, 1F))
+                    .setTarget(tv)
+                    .setDuration(1000);
+        if (!sortAnimator.isRunning())
+            sortAnimator.start();
     }
 
     private void playTogether() {
