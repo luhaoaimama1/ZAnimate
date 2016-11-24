@@ -53,7 +53,10 @@ setTarget(在此类中AnimatorSetProxy )两种:
     setTargetRatio(Object... objs)
 
 ### third:
-序列动画 play 对应的类是SortAnimator;请注意 with是伴随play,或者After开始的;
+序列动画 play 对应的类是SortAnimator;
+>请注意:with是伴随 play或者After开始的
+
+>但是after是前一个play结束开始的 而和with结束没关系;
 
        // 特定顺序的动画
            ObjectAnimatorHelper
@@ -69,7 +72,10 @@ setTarget(在此类中AnimatorSetProxy )两种:
 
 ####请注意!!!
 >这个和原生的`逻辑`不一样，虽然名字一样;
->经过我的发现原生的-——>after在前边,play在after 300以后播放,with和play一起播放, before最后播放;而且使用起来各种意义上的迷糊现在也没弄懂.所以自己造了一个~;
+
+>原生的逻辑-——>after在前边,play在after 300以后播放,with和play一起播放, before最后播放;
+
+>而且使用起来各种意义上的迷糊现在也没弄懂.所以自己造了一个~;
 
 ### four:
 预设动画playPreset(平时觉得好的可以 可以用此存起来) 对应的接口 BaseViewAnimator,范例类;ExampleAnimator,范例:
