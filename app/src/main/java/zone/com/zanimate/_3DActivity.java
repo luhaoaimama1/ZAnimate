@@ -97,7 +97,6 @@ public class _3DActivity extends BaseFragmentActivity {
                         .rotationY(layerProperty.getyR())
                         .rotationZ(layerProperty.getzR())
                         .attach(
-
                                 LayerParent
                                         .location(layerParent_Property.getX(), layerParent_Property.getY(),
                                                 layerParent_Property.getZ())

@@ -21,8 +21,8 @@ public class Layer {
     private Layer() {
     }
     /**
-     * @param z 可以正负   正的 那么  0度就是本身180会变小,  负的  0度小 180图像会变大;因为围绕的点事LayerParent
-     *          范例:如果 parent (100,200,-500)  relativeZPosition(-400) 那么我的位置就是 （100,200,-900{parent.z+this.z}）
+     * @param z 可以正负  范例:如果 relativeZPosition(-400) 并且 parent (100,200,-500)
+     *          那么我的位置就是 （100,200,-900=[parent.z+this.z]）
      * @return
      */
     public Layer relativeZPosition(float z) {
@@ -30,7 +30,12 @@ public class Layer {
         return this;
     }
 
-    //注意 set此以后 坐标系更改 translate也会因为他改变而改变额  因为又pre操作
+    /**
+     * 旋转所围绕的点；
+     * @param px
+     * @param py
+     * @return
+     */
     public static Layer setPivot(float px, float py) {
         Layer layer = new Layer();
         layer.px = px;

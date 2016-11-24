@@ -11,7 +11,9 @@ public class LayerParent {
     private LayerParent() {
     }
 
-    //被围绕的点
+    /**
+     *     被围绕的点 类似于AE的 null object;
+     */
     public static LayerParent location(float x, float y, float z) {
         LayerParent parent = new LayerParent();
         parent.x = x;

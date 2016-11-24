@@ -9,6 +9,8 @@ import android.graphics.Matrix;
  * <p>
  * <p>
  * 都是已 左手坐标系为基准（旋转，位移） ，x右边，y下，通过左手坐标系判断，Z就知道了  向外，非朝向手机里面；
+ *
+ * 摄像机反求类，你把 位移，旋转都给了，他会帮你反求出camera；
  */
 public class CameraInvert {
 
