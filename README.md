@@ -27,7 +27,7 @@ Step 2. Add the dependency
     
 
 
-##ObjectAnimatorHelper 这个类最重要 主要对ObjectAnimator使用;分四种使用方式:
+##ObjectAnimatorHelper的四种使用方式:
 
 ###first:
 ofFloat,ofInt,ofObject,支持我写的代理额类则繁衍了,ofFloatProxy,ofIntProxy,ofObjectProxy;范例:
@@ -85,7 +85,7 @@ setTarget(在此类中AnimatorSetProxy )两种:
 
     ObjectAnimatorHelper.playPreset(ExampleAnimator.class).setTarget(tv).start();
 
-###five:
+##ValueAnimatorProxy的使用方式:
 ValueAnimator 用ValueAnimatorProxy;
 >默认插值器：AccelerateDecelerateInterpolator(by:androidnineold）
 
