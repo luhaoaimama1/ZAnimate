@@ -5,15 +5,29 @@
     android:gravity="center"
     android:orientation="vertical">
 
+
     <TextView
         android:id="@+id/tv_2d"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@color/colorPrimary"
         android:gravity="center"
         android:onClick="onClick"
         android:padding="10dp"
         android:text="2D动画" />
+
+    <TextView
+        android:id="@+id/tv_2d_rebound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="弹性动画Rebound" />
+
     <TextView
         android:id="@+id/tv_3d2"
         android:layout_width="match_parent"

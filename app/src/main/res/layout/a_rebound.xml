@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zone.com.zanimate._2DActivity">
+
+    <com.zone.view.SquareImageView2
+        android:id="@+id/siv"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/aaaaaaaaaaaab" />
+
+    <LinearLayout
+        android:id="@+id/ll_main"
+        android:layout_width="300dp"
+        android:layout_centerInParent="true"
+        android:layout_height="300dp"
+        android:orientation="vertical"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_Friction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="摩擦力(friction):" />
+
+            <SeekBar
+                android:id="@+id/seekBarFriction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/tv_Tension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拉力(tension):" />
+
+            <SeekBar
+                android:id="@+id/seekTension"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="1000" />
+        </LinearLayout>
+
+        <com.zone.view.FlowLayout
+            android:id="@+id/fl"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="基础使用"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/playTogether"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="连锁动画"
+                android:textAllCaps="false" />
+
+
+        </com.zone.view.FlowLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

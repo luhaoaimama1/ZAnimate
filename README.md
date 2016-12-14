@@ -10,6 +10,8 @@
 
 `3D库的demo使用介绍`: 如何使用demo与使用 [请点此处](README-3D.md)
 
+`Rebound 弹簧系统`：[Rebound的简单使用与源码分析](Rebound的简单使用.md)
+
 ### JicPack
 Add it in your root build.gradle at the end of repositories:
 ```

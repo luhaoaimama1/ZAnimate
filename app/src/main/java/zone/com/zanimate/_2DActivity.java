@@ -29,7 +29,7 @@ public class _2DActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.a_2d);
         ButterKnife.bind(this);
         new ViewWrap().start();
     }

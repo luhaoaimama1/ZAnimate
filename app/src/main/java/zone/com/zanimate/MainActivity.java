@@ -41,6 +41,9 @@ public class MainActivity extends BaseActivity {
             case R.id.tv_3d2:
                 startActivity(new Intent(this,_3DActivity.class));
                 break;
+            case R.id.tv_2d_rebound:
+                startActivity(new Intent(this,_ReboundActivity.class));
+                break;
         }
     }
 
