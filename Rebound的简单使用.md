@@ -57,6 +57,9 @@ public interface SpringListener {
 
 ![](./demo/rebound区别.png)
 
+
+
+
 ###连锁动画
 
 ```
@@ -79,6 +82,62 @@ mSpringChain.setControlSpringIndex(2).getControlSpring().setEndValue(0);
 
 ![](./demo/rebound_addSpring.png)
 
+###官方小球demo解析
+    
+* setVelocity
+    >会根据当前的速度计算剩下的位置；类似setEndValue 是一个值的变化 而不是瞬间；
+
+    >Ps:根据官方小球demo,setVelocity之前 会把拉力设置为0 可能是为了拉力不影响速度的值吧；
+    
+    >Tip:setEndValue 则是和拉力有关系没速度没关系。所以下面代码在setEndValue使用之前 把拉力从0改成20
+
+* SpringSystemListener（SpringSystem.addListener）
+    * onBeforeIntegrate 每次计算之前
+    * onAfterIntegrate  每次计算之后
+
+>为什么在onAfterIntegrate里写 而不是onBeforeIntegrate 因为如果出界后可以马上放回来。
+
+```
+springSystem = SpringSystem.create();
+springSystem.addListener(this);
+xSpring = springSystem.createSpring();
+ySpring = springSystem.createSpring();
+
+@Override
+public void onBeforeIntegrate(BaseSpringSystem springSystem) {
+}
+
+@Override
+public void onAfterIntegrate(BaseSpringSystem springSystem) {
+    //x就不写了 同y
+    if (y + radius >= getHeight()) {
+        //球碰到或出边界  吧速度返过来 然后setCurrentValue注意后边有个false 是让动画继续的意思；
+       ySpring.setVelocity(-ySpring.getVelocity());
+        //ySpring.getCurrentValue() - (y + radius - getHeight()) 表示如果出界 就把他放回界内；
+       ySpring.setCurrentValue(ySpring.getCurrentValue() - (y + radius - getHeight()), false);
+     }
+     if (y - radius <= 0) {
+        //同上
+       ySpring.setVelocity(-ySpring.getVelocity());
+       ySpring.setCurrentValue(ySpring.getCurrentValue() - (y - radius), false);
+     }
+ 
+     for (PointF point : points) {
+       if (dist(x, y, point.x, point.y) < attractionThreshold &&
+           Math.abs(xSpring.getVelocity()) < 900 &&
+           Math.abs(ySpring.getVelocity()) < 900 &&
+           !dragging) {
+           //如果速度小于某个值 并且在某个圆的一定范围内 并且手没有拖拽,则用setEndValue平滑过渡到某一点；
+         xSpring.setSpringConfig(CONVERGING);
+         xSpring.setEndValue(point.x);
+         //CONVERGING=SpringConfig.fromOrigamiTensionAndFriction(20, 3); 
+         //这里为什么把拉力弄成20？因为setEndValue和速度没关系和拉力有关系被；
+         ySpring.setSpringConfig(CONVERGING);
+         ySpring.setEndValue(point.y);
+       }
+     }
+}
+```
 
 ###简单的源码流程分析图
 ![](./demo/rebound简单的源码流程.png)
