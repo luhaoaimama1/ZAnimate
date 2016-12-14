@@ -55,7 +55,7 @@ public interface SpringListener {
 
 >Ps:setAtRest()会让他停止动画；
 
-![](./demo/rebound区别2.png)
+![](./demo/rebound区别.png)
 
 ###连锁动画
 
