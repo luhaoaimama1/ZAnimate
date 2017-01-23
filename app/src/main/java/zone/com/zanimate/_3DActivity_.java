@@ -15,7 +15,7 @@ import and.utils.data.convert.ArraysUtil;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import zone.com.zanimate.camera.ZLayer;
+import zone.com.zanimate.camera.Layer;
 import zone.com.zanimate.view.TouchProgressView;
 import zone.com.zanimate.view.View_3D;
 
@@ -53,7 +53,7 @@ public class _3DActivity_ extends BaseActivity {
     GridView gv;
     @Bind(R.id.view_3D)
     View_3D view_3D;
-    private ZLayer first,second,third,now;
+    private Layer first,second,third,now;
     Button[] buttons=new Button[3];
     private String[] propertys = new String[]{
             "tX", "tY", "tZ",
@@ -81,9 +81,9 @@ public class _3DActivity_ extends BaseActivity {
 
     @Override
     public void initData() {
-        first=new ZLayer();
-        second=new ZLayer();
-        third=new ZLayer();
+        first=new Layer();
+        second=new Layer();
+        third=new Layer();
         buttons[0]=bt_first;
         buttons[1]=bt_Second;
         buttons[2]=bt_Third;
@@ -135,22 +135,22 @@ public class _3DActivity_ extends BaseActivity {
                 tv.setText(item+":");
                 switch (item) {
                     case "tX":
-                        value.setText((int)now.getTx()+"");
+                        value.setText((int)now.getTranslateX()+"");
                         break;
                     case "tY":
-                        value.setText((int)now.getTy()+"");
+                        value.setText((int)now.getTranslateY()+"");
                         break;
                     case "tZ":
-                        value.setText((int)now.getTz()+"");
+                        value.setText((int)now.getTranslateZ()+"");
                         break;
                     case "rX":
-                        value.setText((int)now.getRx()%360+"");
+                        value.setText((int)now.getRorateX()%360+"");
                         break;
                     case "rY":
-                        value.setText((int)now.getRy()%360+"");
+                        value.setText((int)now.getRorateY()%360+"");
                         break;
                     case "rZ":
-                        value.setText((int)now.getRz()%360+"");
+                        value.setText((int)now.getRorateZ()%360+"");
                         break;
 
                 }
@@ -178,22 +178,22 @@ public class _3DActivity_ extends BaseActivity {
                         value.setText(temp+"");
                         switch (item) {
                             case "tX":
-                                now.setTx(temp);
+                                now.translateX(temp);
                                 break;
                             case "tY":
-                                now.setTy(temp);
+                                now.translateY(temp);
                                 break;
                             case "tZ":
-                                now.setTz(temp);
+                                now.translateZ(temp);
                                 break;
                             case "rX":
-                                now.setRx(temp);
+                                now.rorateX(temp);
                                 break;
                             case "rY":
-                                now.setRy(temp);
+                                now.rorateY(temp);
                                 break;
                             case "rZ":
-                                now.setRz(temp);
+                                now.rorateZ(temp);
                                 break;
 
                         }

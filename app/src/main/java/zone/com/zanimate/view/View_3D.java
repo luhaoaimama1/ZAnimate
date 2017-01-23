@@ -15,7 +15,7 @@ import and.utils.image.compress2sample.SampleUtils;
 import and.utils.view.graphics.DrawUtils;
 import zone.com.zanimate.R;
 import zone.com.zanimate.camera.CameraCorrect;
-import zone.com.zanimate.camera.ZLayer;
+import zone.com.zanimate.camera.Layer;
 
 /**
  * MIT License
@@ -44,7 +44,7 @@ public class View_3D extends View {
     private Bitmap bt;
     private Matrix matrix;
     private CameraCorrect mCameraCorrect;
-    private ZLayer first, second, third;
+    private Layer first, second, third;
     Paint paintRed = DrawUtils.getStrokePaint(Paint.Style.FILL, 5);
     Paint paintGreen = DrawUtils.getStrokePaint(Paint.Style.FILL, 7);
     Paint paintBlue = DrawUtils.getStrokePaint(Paint.Style.FILL, 7);
@@ -79,12 +79,12 @@ public class View_3D extends View {
 
 
         Rect rect = new Rect(0, 0, 140, 140);
-        third.getMatrix(matrix, mCameraCorrect.setPivot(0, 0));
+        third.getMatrix(matrix, mCameraCorrect.setPivot(CameraCorrect.PivotType.LeftTop));
         matrix.postTranslate(getWidth() / 2, 200);
         drawRect(canvas, rect, paintBlue);
 
         rect = new Rect(0, 0, 120, 120);
-        second.getMatrix(matrix, mCameraCorrect.setPivot(0, 0));
+        second.getMatrix(matrix, mCameraCorrect.setPivot(CameraCorrect.PivotType.LeftTop));
         matrix.postTranslate(getWidth() / 2, 200);
         drawRect(canvas, rect, paintGreen);
 
@@ -101,7 +101,7 @@ public class View_3D extends View {
         canvas.restore();
     }
 
-    public void setZLayerFinal(ZLayer first, ZLayer second, ZLayer third) {
+    public void setZLayerFinal(Layer first, Layer second, Layer third) {
         this.first = first;
         this.second = second;
         this.third = third;

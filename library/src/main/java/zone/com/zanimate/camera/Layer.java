@@ -28,40 +28,31 @@ import java.util.List;
  * SOFTWARE.
  */
 
-public class ZLayer {
-
-//    设计规范 layer.setPoivet.relativeZPosition.ro.ro.ro.atttch（parent(location).ro.ro）
-
-
-//    设计规范 layer.setPoivet(x,y,z).position(x,y,z).ro.ro.ro.atttch（parent(location).ro.r
-    //
-
+public class Layer {
 
     private float tx, ty, tz;
     private float rx, ry, rz;
-    private ZLayer parent;
+    private Layer parent;
 
-    public ZLayer() {
+    public Layer() {
     }
 
 
-    public ZLayer translate(float x, float y, float z) {
+    public Layer translate(float x, float y, float z) {
         tx=x;ty=y;tz=z;
         return this;
     }
 
 
-    public ZLayer rotate(float x, float y, float z) {
+    public Layer rotate(float x, float y, float z) {
         rx=x;ry=y;rz=z;
         return this;
     }
-    public ZLayer bindParent(ZLayer parent) {
+    public Layer bindParent(Layer parent) {
         this.parent = parent;
         return this;
     }
-
-    public ZLayer getMatrix(Matrix matrix , CameraCorrect cameraFinal) {
-//        ZCameraFinal cameraFinal = new ZCameraFinal(100, 100);
+//        CameraCorrect cameraFinal = new CameraCorrect(100, 100);
 //
 //        cameraFinal.translate(parent.parent.tx, parent.parent.ty, parent.parent.tz);
 //        cameraFinal.rotate(parent.parent.rx, parent.parent.ry, parent.parent.rz);
@@ -71,11 +62,12 @@ public class ZLayer {
 //
 //        cameraFinal.translate(tx, ty, tz);
 //        cameraFinal.rotate(rx, ry, rz);
+    public Layer getMatrix(Matrix matrix , CameraCorrect cameraFinal) {
 
-        List<ZLayer> parentlist = new ArrayList<>();
+        List<Layer> parentlist = new ArrayList<>();
         parentlist.add(this);
 
-        ZLayer rootParent = parent;
+        Layer rootParent = parent;
         while (rootParent!=null) {
             parentlist.add(rootParent);
             rootParent = rootParent.parent;
@@ -84,7 +76,7 @@ public class ZLayer {
 
         cameraFinal.save();
         for (int i = parentlist.size() - 1; i >= 0; i--) {
-            ZLayer layer = parentlist.get(i);
+            Layer layer = parentlist.get(i);
             cameraFinal.translate(layer.tx, layer.ty, layer.tz);
             cameraFinal.rotate(layer.rx, layer.ry, layer.rz);
         }
@@ -94,51 +86,51 @@ public class ZLayer {
         return this;
     }
 
-    public float getTx() {
+    public float getTranslateX() {
         return tx;
     }
 
-    public void setTx(float tx) {
+    public void translateX(float tx) {
         this.tx = tx;
     }
 
-    public float getTy() {
+    public float getTranslateY() {
         return ty;
     }
 
-    public void setTy(float ty) {
+    public void translateY(float ty) {
         this.ty = ty;
     }
 
-    public float getTz() {
+    public float getTranslateZ() {
         return tz;
     }
 
-    public void setTz(float tz) {
+    public void translateZ(float tz) {
         this.tz = tz;
     }
 
-    public float getRx() {
+    public float getRorateX() {
         return rx;
     }
 
-    public void setRx(float rx) {
+    public void rorateX(float rx) {
         this.rx = rx;
     }
 
-    public float getRy() {
+    public float getRorateY() {
         return ry;
     }
 
-    public void setRy(float ry) {
+    public void rorateY(float ry) {
         this.ry = ry;
     }
 
-    public float getRz() {
+    public float getRorateZ() {
         return rz;
     }
 
-    public void setRz(float rz) {
+    public void rorateZ(float rz) {
         this.rz = rz;
     }
 }

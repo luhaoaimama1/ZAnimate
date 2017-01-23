@@ -8,7 +8,7 @@
 `2D库的优点`:  NineOldAndroids的 `链接调用` `增加预设` `去掉重复参数`
 >Tip:`链接调用碰到继承改如何使用` [解决参考](https://github.com/luhaoaimama1/ZAnimate/blob/master/app/src/main/java/zone/com/zanimate/ViewWrap.java) [我的扫光库也使用到了](https://github.com/luhaoaimama1/Shine/blob/master/lightsweep/src/main/java/zone/com/lightsweep/ShineAnimator.java)
 
-`3D库的demo使用介绍`: 如何使用demo与使用 [请点此处](README-3D.md)
+`3D库的使用介绍`: 如何使用demo与使用 [请点此处](https://luhaoaimama1.github.io/2017/01/23/Camera调研/)
 
 `Rebound 弹簧系统-让动画不再僵硬`：[Rebound的简单使用与源码分析](Rebound的简单使用.md)
 

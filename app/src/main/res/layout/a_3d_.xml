@@ -37,6 +37,11 @@
             android:text="Third:Blue" />
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="提示：数值text点击后可变为0" />
 
     <GridView
         android:id="@+id/gv"
