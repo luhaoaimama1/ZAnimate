@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name="._2DActivity"></activity>
-        <activity android:name="._3DActivity"></activity>
+        <activity android:name="._3DActivity_"></activity>
         <activity android:name="._ReboundActivity"></activity>
         <activity android:name="._ImitationActivity"></activity>
         <activity android:name="._AniActivity"></activity>

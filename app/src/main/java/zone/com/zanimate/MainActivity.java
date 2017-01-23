@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this,_AniActivity.class));
                 break;
             case R.id.tv_ani2:
-                startActivity(new Intent(this,_3DActivity.class));
+                startActivity(new Intent(this,_3DActivity_.class));
                 break;
         }
     }

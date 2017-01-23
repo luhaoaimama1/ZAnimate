@@ -8,8 +8,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import zone.com.zanimate.camera.Layer;
-import zone.com.zanimate.camera.LayerParent;
 import zone.com.zanimate.camera.ZCameraFinal;
 import zone.com.zanimate.camera.ZLayerFinal;
 
@@ -48,25 +46,6 @@ public class Roll3DImageView_Lib extends FrameLayout {
 //        super.dispatchDraw(canvas);
         View first = getChildAt(0);
         View second = getChildAt(1);
-
-//        Matrix matrix=new Matrix();
-//        new ZLayerFinal()
-//                .translate(0,0,-800)
-//                .rotate(-rotateDegree,0,0)
-//        .getMatrix(matrix,mZCameraFinal.setPivot(viewWidth / 2,0));
-//        matrix.postTranslate(0,(float) axisY);
-//
-//        drawScreen(canvas, first, matrix);
-//
-//
-//        Matrix matrix2=new Matrix();
-//        new ZLayerFinal()
-//                .translate(0,0,-800)
-//                .rotate(90-rotateDegree,0,0)
-//        .getMatrix(matrix2,mZCameraFinal.setPivot(viewWidth / 2,viewHeight));
-//        matrix2.postTranslate(0,-viewHeight+(float) axisY);
-//
-//        drawScreen(canvas, second, matrix2);
 
         Matrix matrix=new Matrix();
         new ZLayerFinal()

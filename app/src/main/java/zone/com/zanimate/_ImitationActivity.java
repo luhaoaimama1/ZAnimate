@@ -10,7 +10,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import zone.com.zanimate.view.Roll3DImageView_;
 import zone.com.zanimate.view.Roll3DImageView_Lib;
-import zone.com.zanimate.view.TouchProgressView;
 
 public class _ImitationActivity extends BaseFragmentActivity {
     @Bind(R.id.atdv_seek_bar1)
