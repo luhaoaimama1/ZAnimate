@@ -28,16 +28,6 @@
         android:padding="10dp"
         android:text="弹性动画Rebound" />
 
-    <TextView
-        android:id="@+id/tv_3d2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:onClick="onClick"
-        android:padding="10dp"
-        android:text="3D动画" />
 
     <TextView
         android:id="@+id/tv_imit"
@@ -68,5 +58,5 @@
         android:gravity="center"
         android:onClick="onClick"
         android:padding="10dp"
-        android:text="动画研究2" />
+        android:text="3Dlib" />
 </LinearLayout>
