@@ -53,7 +53,7 @@ public class ZCameraFinal extends Camera {
     public void getMatrix(Matrix matrix) {
         super.getMatrix(matrix);
         matrix.preTranslate(-px,-py);
-        matrix.postTranslate(px,py);
+//        matrix.postTranslate(px,py);
     }
     /**
      * 0---1---2

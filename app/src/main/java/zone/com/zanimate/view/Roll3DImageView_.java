@@ -8,9 +8,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import zone.com.zanimate.camera.Layer;
-import zone.com.zanimate.camera.LayerParent;
-
 //参考：Roll3DImageView:https://github.com/zhangyuChen1991/Roll3DImageView
 public class Roll3DImageView_ extends FrameLayout {
 
