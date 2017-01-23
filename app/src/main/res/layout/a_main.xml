@@ -58,5 +58,5 @@
         android:gravity="center"
         android:onClick="onClick"
         android:padding="10dp"
-        android:text="3Dlib" />
+        android:text="3DLib" />
 </LinearLayout>
