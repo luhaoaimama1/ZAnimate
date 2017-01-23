@@ -4,31 +4,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv"
-        android:padding="20dp"
+    <LinearLayout
+        android:id="@+id/ll_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:clickable="false"
-        android:focusable="false"
-        android:text="AX:" />
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center"
+            android:text="AX:" />
+
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center"
+            android:text="0" />
+    </LinearLayout>
 
     <zone.com.zanimate.view.TouchProgressView
         android:id="@+id/tpv"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:background="@color/colorAccent"
         android:orientation="vertical">
 
-        <!--<TextView-->
-        <!--android:clickable="false"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:background="@color/colorAccent"-->
-        <!--android:gravity="center"-->
-        <!--android:text="这里是左右滑竿"-->
-        <!--android:textSize="12sp" />-->
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="滑动更改值" />
     </zone.com.zanimate.view.TouchProgressView>
+    >
 </LinearLayout>

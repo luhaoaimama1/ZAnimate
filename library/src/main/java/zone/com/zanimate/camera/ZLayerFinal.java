@@ -76,9 +76,9 @@ public class ZLayerFinal {
         parentlist.add(this);
 
         ZLayerFinal rootParent = parent;
-        while (rootParent!=null&&rootParent.parent != null) {
-            rootParent = rootParent.parent;
+        while (rootParent!=null) {
             parentlist.add(rootParent);
+            rootParent = rootParent.parent;
         }
 
 
@@ -92,5 +92,53 @@ public class ZLayerFinal {
         cameraFinal.getMatrix(matrix);
         cameraFinal.restore();
         return this;
+    }
+
+    public float getTx() {
+        return tx;
+    }
+
+    public void setTx(float tx) {
+        this.tx = tx;
+    }
+
+    public float getTy() {
+        return ty;
+    }
+
+    public void setTy(float ty) {
+        this.ty = ty;
+    }
+
+    public float getTz() {
+        return tz;
+    }
+
+    public void setTz(float tz) {
+        this.tz = tz;
+    }
+
+    public float getRx() {
+        return rx;
+    }
+
+    public void setRx(float rx) {
+        this.rx = rx;
+    }
+
+    public float getRy() {
+        return ry;
+    }
+
+    public void setRy(float ry) {
+        this.ry = ry;
+    }
+
+    public float getRz() {
+        return rz;
+    }
+
+    public void setRz(float rz) {
+        this.rz = rz;
     }
 }
