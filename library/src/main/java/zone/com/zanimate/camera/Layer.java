@@ -13,6 +13,10 @@ public class Layer {
 //    设计规范 layer.setPoivet.relativeZPosition.ro.ro.ro.atttch（parent(location).ro.ro）
 
 
+//    设计规范 layer.setPoivet(x,y,z).position(x,y,z).ro.ro.ro.atttch（parent(location).ro.r
+    //
+
+
     private float z;
     private float px, py;
     private float rX_Degrees, rY_Degrees, rZ_Degrees;
@@ -20,6 +24,7 @@ public class Layer {
 
     private Layer() {
     }
+
     /**
      * @param z 可以正负  范例:如果 relativeZPosition(-400) 并且 parent (100,200,-500)
      *          那么我的位置就是 （100,200,-900=[parent.z+this.z]）
@@ -32,6 +37,7 @@ public class Layer {
 
     /**
      * 旋转所围绕的点；
+     *
      * @param px
      * @param py
      * @return
@@ -71,7 +77,7 @@ public class Layer {
         cameraInvert.setPivot(px, py);
         //坐标系平移
         cameraInvert.translate_3D(-px + parent.x, -py + parent.y, parent.z);
-
+//        cameraInvert.translate_3D(parent.x,parent.y, parent.z);
         //围绕 parent 旋转；
         cameraInvert.rotateX_3D(parent.rX_Degrees);//更改  2D旋转(不能放3D前面  不然变得跟平面一样)  为啥会变成这样呢 因为都是操作 Matrix, Matrix 是2D的； 那么你更改X旋转即可； matrix没有 所以用camera操作；
         cameraInvert.rotateY_3D(parent.rY_Degrees);//更改  2D旋转(不能放3D前面  不然变得跟平面一样)  为啥会变成这样呢 因为都是操作 Matrix, Matrix 是2D的； 那么你更改X旋转即可； matrix没有 所以用camera操作；
@@ -89,4 +95,5 @@ public class Layer {
 
         return mMatrix;
     }
+
 }

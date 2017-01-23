@@ -38,4 +38,35 @@
         android:onClick="onClick"
         android:padding="10dp"
         android:text="3D动画" />
+
+    <TextView
+        android:id="@+id/tv_imit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="模仿" />
+    <TextView
+        android:id="@+id/tv_ani"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="动画研究" />
+    <TextView
+        android:id="@+id/tv_ani2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="动画研究2" />
 </LinearLayout>

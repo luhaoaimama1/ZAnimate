@@ -44,6 +44,15 @@ public class MainActivity extends BaseActivity {
             case R.id.tv_2d_rebound:
                 startActivity(new Intent(this,_ReboundActivity.class));
                 break;
+            case R.id.tv_imit:
+                startActivity(new Intent(this,_ImitationActivity.class));
+                break;
+            case R.id.tv_ani:
+                startActivity(new Intent(this,_AniActivity.class));
+                break;
+            case R.id.tv_ani2:
+                startActivity(new Intent(this,_AniActivity2.class));
+                break;
         }
     }
 

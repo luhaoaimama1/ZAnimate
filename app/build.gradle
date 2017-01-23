@@ -29,4 +29,5 @@ dependencies {
     compile 'com.github.luhaoaimama1:zone-sdk:1.0.90'
     compile 'com.github.luhaoaimama1:ZView:1.0.35'
     compile 'com.facebook.rebound:rebound:0.3.8'
+    compile 'com.github.luhaoaimama1:ZAdapter:1.1.0'
 }
