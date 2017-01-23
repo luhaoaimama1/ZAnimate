@@ -7,13 +7,12 @@ import android.os.Build;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-import zone.com.zanimate.camera.ZCamera;
 
 public class CustomAnim extends Animation {
 
     private int mCenterWidth;
     private int mCenterHeight;
-    private Camera mCamera = new ZCamera();
+    private Camera mCamera = new Camera();
     private float mRotateX = 0.0f, mRotateY = 0.0f, mRotateZ = 0.0f;
     private float mX = 0.0f, mY = 0.0f, mZ = 0.0f;
 

@@ -15,7 +15,7 @@ import and.utils.data.convert.ArraysUtil;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import zone.com.zanimate.camera.ZLayerFinal;
+import zone.com.zanimate.camera.ZLayer;
 import zone.com.zanimate.view.TouchProgressView;
 import zone.com.zanimate.view.View_3D;
 
@@ -53,7 +53,7 @@ public class _3DActivity_ extends BaseActivity {
     GridView gv;
     @Bind(R.id.view_3D)
     View_3D view_3D;
-    private ZLayerFinal first,second,third,now;
+    private ZLayer first,second,third,now;
     Button[] buttons=new Button[3];
     private String[] propertys = new String[]{
             "tX", "tY", "tZ",
@@ -81,9 +81,9 @@ public class _3DActivity_ extends BaseActivity {
 
     @Override
     public void initData() {
-        first=new ZLayerFinal();
-        second=new ZLayerFinal();
-        third=new ZLayerFinal();
+        first=new ZLayer();
+        second=new ZLayer();
+        third=new ZLayer();
         buttons[0]=bt_first;
         buttons[1]=bt_Second;
         buttons[2]=bt_Third;

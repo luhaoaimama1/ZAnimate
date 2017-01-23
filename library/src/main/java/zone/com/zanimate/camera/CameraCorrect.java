@@ -10,12 +10,12 @@ import android.graphics.Matrix;
  *
  *  图层在旋转与位移 原因:因为location 没有因为旋转和位移更改位置;
  */
-public class ZCameraFinal extends Camera {
+public class CameraCorrect extends Camera {
     private final int layerWidth,  layerHeight;
     private float px,py;
     private PivotType pivotType=PivotType.None;
 
-    public ZCameraFinal(int layerWidth, int layerHeight) {
+    public CameraCorrect(int layerWidth, int layerHeight) {
         this.layerWidth=layerWidth;
         this.layerHeight=layerHeight;
     }
@@ -37,7 +37,7 @@ public class ZCameraFinal extends Camera {
         super.rotateZ(-deg);
     }
     //注意 set此以后 坐标系更改 translate也会因为他改变而改变额  因为又pre操作
-    public ZCameraFinal setPivot(float px, float py) {
+    public CameraCorrect setPivot(float px, float py) {
         this.px = px;
         this.py = py;
         return this;
@@ -76,7 +76,7 @@ public class ZCameraFinal extends Camera {
      *
      * @param parent
      */
-    public void BindingParent(ZCameraFinal parent){
+    public void BindingParent(CameraCorrect parent){
 
     }
 }

@@ -14,8 +14,8 @@ import and.utils.image.BitmapUtils;
 import and.utils.image.compress2sample.SampleUtils;
 import and.utils.view.graphics.DrawUtils;
 import zone.com.zanimate.R;
-import zone.com.zanimate.camera.ZCameraFinal;
-import zone.com.zanimate.camera.ZLayerFinal;
+import zone.com.zanimate.camera.CameraCorrect;
+import zone.com.zanimate.camera.ZLayer;
 
 /**
  * MIT License
@@ -43,8 +43,8 @@ import zone.com.zanimate.camera.ZLayerFinal;
 public class View_3D extends View {
     private Bitmap bt;
     private Matrix matrix;
-    private ZCameraFinal mZCameraFinal;
-    private ZLayerFinal first, second, third;
+    private CameraCorrect mCameraCorrect;
+    private ZLayer first, second, third;
     Paint paintRed = DrawUtils.getStrokePaint(Paint.Style.FILL, 5);
     Paint paintGreen = DrawUtils.getStrokePaint(Paint.Style.FILL, 7);
     Paint paintBlue = DrawUtils.getStrokePaint(Paint.Style.FILL, 7);
@@ -62,8 +62,8 @@ public class View_3D extends View {
         bt = SampleUtils.load(getContext(), R.drawable.wave).bitmap();
         bt = BitmapUtils.scaleBitmap(bt, 0.5F, 0.5F, false);
         matrix = new Matrix();
-        mZCameraFinal = new ZCameraFinal(bt.getWidth(), bt.getHeight());
-        mZCameraFinal.translate(0, 0, -500);
+        mCameraCorrect = new CameraCorrect(bt.getWidth(), bt.getHeight());
+        mCameraCorrect.translate(0, 0, -500);
         paintRed.setColor(Color.RED);
         paintGreen.setColor(Color.GREEN);
         paintBlue.setColor(Color.BLUE);
@@ -79,17 +79,17 @@ public class View_3D extends View {
 
 
         Rect rect = new Rect(0, 0, 140, 140);
-        third.getMatrix(matrix, mZCameraFinal.setPivot(0, 0));
+        third.getMatrix(matrix, mCameraCorrect.setPivot(0, 0));
         matrix.postTranslate(getWidth() / 2, 200);
         drawRect(canvas, rect, paintBlue);
 
         rect = new Rect(0, 0, 120, 120);
-        second.getMatrix(matrix, mZCameraFinal.setPivot(0, 0));
+        second.getMatrix(matrix, mCameraCorrect.setPivot(0, 0));
         matrix.postTranslate(getWidth() / 2, 200);
         drawRect(canvas, rect, paintGreen);
 
         rect = new Rect(0, 0, 100, 100);
-        first.getMatrix(matrix, mZCameraFinal.setPivot(0, 0));
+        first.getMatrix(matrix, mCameraCorrect.setPivot(0, 0));
         matrix.postTranslate(getWidth() / 2, 200);
         drawRect(canvas, rect, paintRed);
     }
@@ -101,7 +101,7 @@ public class View_3D extends View {
         canvas.restore();
     }
 
-    public void setZLayerFinal(ZLayerFinal first, ZLayerFinal second, ZLayerFinal third) {
+    public void setZLayerFinal(ZLayer first, ZLayer second, ZLayer third) {
         this.first = first;
         this.second = second;
         this.third = third;

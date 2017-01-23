@@ -1,15 +1,14 @@
 package zone.com.zanimate.view;
 
 import android.content.Context;
-import android.graphics.Camera;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import zone.com.zanimate.camera.ZCameraFinal;
-import zone.com.zanimate.camera.ZLayerFinal;
+import zone.com.zanimate.camera.CameraCorrect;
+import zone.com.zanimate.camera.ZLayer;
 
 //参考：Roll3DImageView:https://github.com/zhangyuChen1991/Roll3DImageView
 public class Roll3DImageView_Lib extends FrameLayout {
@@ -30,13 +29,13 @@ public class Roll3DImageView_Lib extends FrameLayout {
     public Roll3DImageView_Lib(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
-    ZCameraFinal mZCameraFinal;
+    CameraCorrect mCameraCorrect;
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         this.viewHeight = h;
         this.viewWidth = w;
-        mZCameraFinal=new ZCameraFinal(viewWidth,viewHeight);
+        mCameraCorrect =new CameraCorrect(viewWidth,viewHeight);
     }
 
 
@@ -48,22 +47,22 @@ public class Roll3DImageView_Lib extends FrameLayout {
         View second = getChildAt(1);
 
         Matrix matrix=new Matrix();
-        new ZLayerFinal()
+        new ZLayer()
 //                .translate(0,(float)axisY,-800)
 //                .translate(0,(float)axisY,0)
                 .rotate(-rotateDegree,0,0)
-        .getMatrix(matrix,mZCameraFinal.setPivot(viewWidth / 2,0));
+        .getMatrix(matrix, mCameraCorrect.setPivot(viewWidth / 2,0));
         matrix.postTranslate(0,(float) axisY);
 
         drawScreen(canvas, first, matrix);
 
 
         Matrix matrix2=new Matrix();
-        new ZLayerFinal()
+        new ZLayer()
 //                .translate(0,-viewHeight+(float) axisY,-800)
 //                .translate(0,-viewHeight+(float) axisY,0)
                 .rotate(90-rotateDegree,0,0)
-        .getMatrix(matrix2,mZCameraFinal.setPivot(viewWidth / 2,viewHeight));
+        .getMatrix(matrix2, mCameraCorrect.setPivot(viewWidth / 2,viewHeight));
         matrix2.postTranslate(0,-viewHeight+(float) axisY);
 
         drawScreen(canvas, second, matrix2);

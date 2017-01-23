@@ -28,7 +28,7 @@ import java.util.List;
  * SOFTWARE.
  */
 
-public class ZLayerFinal {
+public class ZLayer {
 
 //    设计规范 layer.setPoivet.relativeZPosition.ro.ro.ro.atttch（parent(location).ro.ro）
 
@@ -39,28 +39,28 @@ public class ZLayerFinal {
 
     private float tx, ty, tz;
     private float rx, ry, rz;
-    private ZLayerFinal parent;
+    private ZLayer parent;
 
-    public ZLayerFinal() {
+    public ZLayer() {
     }
 
 
-    public ZLayerFinal translate(float x, float y, float z) {
+    public ZLayer translate(float x, float y, float z) {
         tx=x;ty=y;tz=z;
         return this;
     }
 
 
-    public ZLayerFinal rotate(float x, float y, float z) {
+    public ZLayer rotate(float x, float y, float z) {
         rx=x;ry=y;rz=z;
         return this;
     }
-    public ZLayerFinal bindParent(ZLayerFinal parent) {
+    public ZLayer bindParent(ZLayer parent) {
         this.parent = parent;
         return this;
     }
 
-    public ZLayerFinal getMatrix(Matrix matrix ,ZCameraFinal cameraFinal) {
+    public ZLayer getMatrix(Matrix matrix , CameraCorrect cameraFinal) {
 //        ZCameraFinal cameraFinal = new ZCameraFinal(100, 100);
 //
 //        cameraFinal.translate(parent.parent.tx, parent.parent.ty, parent.parent.tz);
@@ -72,10 +72,10 @@ public class ZLayerFinal {
 //        cameraFinal.translate(tx, ty, tz);
 //        cameraFinal.rotate(rx, ry, rz);
 
-        List<ZLayerFinal> parentlist = new ArrayList<>();
+        List<ZLayer> parentlist = new ArrayList<>();
         parentlist.add(this);
 
-        ZLayerFinal rootParent = parent;
+        ZLayer rootParent = parent;
         while (rootParent!=null) {
             parentlist.add(rootParent);
             rootParent = rootParent.parent;
@@ -84,7 +84,7 @@ public class ZLayerFinal {
 
         cameraFinal.save();
         for (int i = parentlist.size() - 1; i >= 0; i--) {
-            ZLayerFinal layer = parentlist.get(i);
+            ZLayer layer = parentlist.get(i);
             cameraFinal.translate(layer.tx, layer.ty, layer.tz);
             cameraFinal.rotate(layer.rx, layer.ry, layer.rz);
         }
