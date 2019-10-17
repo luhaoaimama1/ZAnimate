@@ -10,9 +10,10 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 
-import and.utils.image.BitmapUtils;
-import and.utils.image.compress2sample.SampleUtils;
-import and.utils.view.graphics.DrawUtils;
+import com.zone.lib.utils.image.BitmapUtils;
+import com.zone.lib.utils.image.compress2sample.SampleUtils;
+import com.zone.lib.utils.view.DrawUtils;
+
 import zone.com.zanimate.R;
 import zone.com.zanimate.camera.CameraCorrect;
 import zone.com.zanimate.camera.Layer;

@@ -1,13 +1,16 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
 android {
-    compileSdkVersion 23
-    buildToolsVersion "24.0.1"
+    compileSdkVersion 28
 
     defaultConfig {
         applicationId "zone.com.zanimate"
-        minSdkVersion 14
-        targetSdkVersion 23
+        minSdkVersion 16
         versionCode 1
         versionName "1.0"
     }
@@ -17,17 +20,42 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    defaultConfig {
+        minSdkVersion 16
+        // dex突破65535的限制
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.0.0'
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile project(':library')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+//    compile 'com.jakewharton:butterknife:7.0.1'
+    //butterknife
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    kapt 'com.jakewharton:butterknife-compiler:10.0.0'
+    implementation project(':library')
 //    compile 'com.github.luhaoaimama1:ZAnimate:1.0.0'
-    compile 'com.github.luhaoaimama1:zone-sdk:1.0.90'
-    compile 'com.github.luhaoaimama1:ZView:1.0.35'
-    compile 'com.facebook.rebound:rebound:0.3.8'
-    compile 'com.github.luhaoaimama1:ZAdapter:1.1.0'
+    implementation 'com.github.luhaoaimama1:zone-sdk:2.1.02'
+    implementation 'com.github.luhaoaimama1:ZView:1.0.36'
+    implementation 'com.facebook.rebound:rebound:0.3.8'
+//    implementation 'com.github.luhaoaimama1:ZAdapter:1.1.0'
+    implementation 'com.github.luhaoaimama1:ZAdapter3KT:1.0.04'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    compile "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}
+configurations {
+    cleanedAnnotations
+    compile.exclude group: 'org.jetbrains' , module:'annotations'
 }

@@ -11,6 +11,7 @@
 `3D库的使用介绍`: [Camera的研究与封装](https://luhaoaimama1.github.io/2017/01/23/Camera调研/)
 
 `Rebound 弹簧系统-让动画不再僵硬`：[Rebound的简单使用与源码分析](Rebound的简单使用.md)
+#运行环境 Android Studio  3.5
 
 ### JicPack
 Add it in your root build.gradle at the end of repositories:

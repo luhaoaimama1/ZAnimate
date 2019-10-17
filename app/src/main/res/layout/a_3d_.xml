@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/gv"
+        android:layout_above="@+id/rv"
         android:orientation="horizontal">
 
         <Button
@@ -39,16 +39,13 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:gravity="center"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="提示：数值text点击后可变为0" />
 
-    <GridView
-        android:id="@+id/gv"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:numColumns="3" />
-
-
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

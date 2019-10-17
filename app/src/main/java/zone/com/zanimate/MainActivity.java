@@ -3,13 +3,13 @@ package zone.com.zanimate;
 import android.content.Intent;
 import android.view.View;
 
-import and.base.activity.BaseActivity;
+import com.zone.lib.base.activity.BaseAppCompatActivity;
 
 /**
  * Created by fuzhipeng on 16/10/4.
  */
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseAppCompatActivity {
 
     @Override
     public void setContentView() {

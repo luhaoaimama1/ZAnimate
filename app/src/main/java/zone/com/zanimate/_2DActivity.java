@@ -1,14 +1,14 @@
 package zone.com.zanimate;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nineoldandroids.animation.ValueAnimator;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import zone.com.zanimate.object.ObjectAnimatorHelper;
@@ -18,11 +18,11 @@ import zone.com.zanimate.value.ValueAnimatorProxy;
 
 public class _2DActivity extends AppCompatActivity {
 
-    @Bind(R.id.tv)
+    @BindView(R.id.tv)
     TextView tv;
-    @Bind(R.id.tv2)
+    @BindView(R.id.tv2)
     TextView tv2;
-    @Bind(R.id.progressBar)
+    @BindView(R.id.progressBar)
     ProgressBar mProgressBar;
 
 

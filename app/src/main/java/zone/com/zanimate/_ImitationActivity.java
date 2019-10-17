@@ -4,23 +4,22 @@ import android.os.Bundle;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.nineoldandroids.animation.ValueAnimator;
+import com.zone.lib.base.activity.BaseFragmentActivity;
+import com.zone.lib.base.activity.kinds.SwipeBackKind;
+import com.zone.lib.utils.view.ViewUtils;
 
-import and.base.activity.BaseFragmentActivity;
-import and.base.activity.kinds.SwipeBackKind;
-import and.utils.view.ViewUtils;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import zone.com.zanimate.value.ValueAnimatorProxy;
 import zone.com.zanimate.view.Roll3DImageView_;
 import zone.com.zanimate.view.Roll3DImageView_Lib;
 
 public class _ImitationActivity extends BaseFragmentActivity {
-    @Bind(R.id.atdv_seek_bar1)
+    @BindView(R.id.atdv_seek_bar1)
     SeekBar atdvSeekBar1;
-    @Bind(R.id.roll3DImageView_)
+    @BindView(R.id.roll3DImageView_)
     Roll3DImageView_ roll3DImageView;
-    @Bind(R.id.roll3DImageView_Lib)
+    @BindView(R.id.roll3DImageView_Lib)
     Roll3DImageView_Lib roll3DImageView_Lib;
     private ValueAnimatorProxy valueAnimator;
 

@@ -7,8 +7,9 @@ import android.graphics.Matrix;
 import android.util.AttributeSet;
 import android.view.View;
 
-import and.utils.image.compress2sample.SampleUtils;
-import and.utils.view.graphics.DrawUtils;
+import com.zone.lib.utils.image.compress2sample.SampleUtils;
+import com.zone.lib.utils.view.DrawUtils;
+
 import zone.com.zanimate.R;
 
 /**

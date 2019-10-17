@@ -9,9 +9,10 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-import and.utils.image.BitmapUtils;
-import and.utils.image.compress2sample.SampleUtils;
-import and.utils.view.graphics.DrawUtils;
+import com.zone.lib.utils.image.BitmapUtils;
+import com.zone.lib.utils.image.compress2sample.SampleUtils;
+import com.zone.lib.utils.view.DrawUtils;
+
 import zone.com.zanimate.R;
 
 /**
@@ -42,7 +43,7 @@ public class PhotoView extends View {
     private Matrix matrix;
     private Matrix matrixStart;
     private Matrix matrixEnd;
-    Paint paint=DrawUtils.getStrokePaint(Paint.Style.FILL,5);
+    Paint paint= DrawUtils.getStrokePaint(Paint.Style.FILL,5);
     Paint paintS=DrawUtils.getStrokePaint(Paint.Style.FILL,7);
     Paint paintE=DrawUtils.getStrokePaint(Paint.Style.FILL,7);
 
@@ -63,8 +64,8 @@ public class PhotoView extends View {
     }
 
     private void init() {
-        bt=SampleUtils.load(getContext(), R.drawable.wave).bitmap();
-        bt=BitmapUtils.scaleBitmap(bt,0.5F,0.5F,false);
+        bt= SampleUtils.load(getContext(), R.drawable.wave).bitmap();
+        bt= BitmapUtils.scaleBitmap(bt,0.5F,0.5F,false);
     }
 
     @Override

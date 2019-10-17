@@ -1,9 +1,8 @@
 package zone.com.zanimate;
 
-import android.annotation.TargetApi;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,26 +17,26 @@ import com.facebook.rebound.SpringSystem;
 import com.facebook.rebound.SpringUtil;
 import com.nineoldandroids.animation.ArgbEvaluator;
 import com.nineoldandroids.view.ViewHelper;
+import com.zone.lib.utils.view.ViewUtils;
 import com.zone.view.SquareImageView2;
 import java.util.List;
-import and.utils.view.ViewUtils;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class _ReboundActivity extends AppCompatActivity {
 
-    @Bind(R.id.siv)
+    @BindView(R.id.siv)
     SquareImageView2 siv;
-    @Bind(R.id.ll_main)
+    @BindView(R.id.ll_main)
     LinearLayout ll_main;
-    @Bind(R.id.seekBarFriction)
+    @BindView(R.id.seekBarFriction)
     SeekBar seekBarFriction;
-    @Bind(R.id.seekTension)
+    @BindView(R.id.seekTension)
     SeekBar seekTension;
-    @Bind(R.id.tv_Friction)
+    @BindView(R.id.tv_Friction)
     TextView tv_Friction;
-    @Bind(R.id.tv_Tension)
+    @BindView(R.id.tv_Tension)
     TextView tv_Tension;
     private Spring spring;
     private int tensionValue = (int) SpringConfig.defaultConfig.tension;
