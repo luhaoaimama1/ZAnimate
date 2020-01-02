@@ -46,7 +46,7 @@ import zone.com.zanimate.camera.Layer
 
 class View_3D @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
     private var bt: Bitmap? = null
-    private val matrix: Matrix
+    private val matrix_: Matrix
     private val mCameraCorrect: CameraCorrect
     private var first: Layer? = null
     private var second: Layer? = null
@@ -58,7 +58,7 @@ class View_3D @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
     init {
         bt = SampleUtils.load(getContext(), R.drawable.wave).bitmap()
         bt = BitmapUtils.scaleBitmap(bt, 0.5f, 0.5f, false)
-        matrix = Matrix()
+        matrix_ = Matrix()
         mCameraCorrect = CameraCorrect(bt!!.width, bt!!.height)
         mCameraCorrect.translate(0f, 0f, -500f)
         paintRed.color = Color.RED
@@ -75,24 +75,24 @@ class View_3D @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
 
 
         var rect = Rect(0, 0, 140, 140)
-        third!!.getMatrix(matrix, mCameraCorrect.setPivot(CameraCorrect.PivotType.LeftTop))
-        matrix.postTranslate((width / 2).toFloat(), 200f)
+        third!!.getMatrix(matrix_, mCameraCorrect.setPivot(CameraCorrect.PivotType.LeftTop))
+        matrix_.postTranslate((width / 2).toFloat(), 200f)
         drawRect(canvas, rect, paintBlue)
 
         rect = Rect(0, 0, 120, 120)
-        second!!.getMatrix(matrix, mCameraCorrect.setPivot(CameraCorrect.PivotType.LeftTop))
-        matrix.postTranslate((width / 2).toFloat(), 200f)
+        second!!.getMatrix(matrix_, mCameraCorrect.setPivot(CameraCorrect.PivotType.LeftTop))
+        matrix_.postTranslate((width / 2).toFloat(), 200f)
         drawRect(canvas, rect, paintGreen)
 
         rect = Rect(0, 0, 100, 100)
-        first!!.getMatrix(matrix, mCameraCorrect.setPivot(0f, 0f))
-        matrix.postTranslate((width / 2).toFloat(), 200f)
+        first!!.getMatrix(matrix_, mCameraCorrect.setPivot(0f, 0f))
+        matrix_.postTranslate((width / 2).toFloat(), 200f)
         drawRect(canvas, rect, paintRed)
     }
 
     private fun drawRect(canvas: Canvas, rect: Rect, paint: Paint) {
         canvas.save()
-        canvas.concat(matrix)
+        canvas.concat(matrix_)
         canvas.drawRect(rect, paint)
         canvas.restore()
     }

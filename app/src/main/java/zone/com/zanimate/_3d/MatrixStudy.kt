@@ -18,25 +18,25 @@ import zone.com.zanimate.R
 class MatrixStudy @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
 
 
-    private val matrix: Matrix
+    private val matrix_: Matrix
     private val bm: Bitmap
     private val values: FloatArray
 
     init {
         bm = SampleUtils.load(context, R.drawable.abcd).bitmap()
         values = FloatArray(9)
-        matrix = Matrix()
-        matrix.getValues(values)
+        matrix_ = Matrix()
+        matrix_.getValues(values)
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawBitmap(bm, matrix, DrawUtils.getBtPaint())
+        canvas.drawBitmap(bm, matrix_, DrawUtils.getBtPaint())
 
     }
 
     private fun refresh() {
-        matrix.setValues(values)
+        matrix_.setValues(values)
         invalidate()
     }
 

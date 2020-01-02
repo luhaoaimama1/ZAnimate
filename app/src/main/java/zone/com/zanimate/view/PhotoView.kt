@@ -43,7 +43,7 @@ import zone.com.zanimate.R
 
 class PhotoView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
     private var bt: Bitmap? = null
-    private var matrix: Matrix? = null
+    private var matrix_: Matrix? = null
     private var matrixStart: Matrix? = null
     private var matrixEnd: Matrix? = null
     internal var paint = DrawUtils.getStrokePaint(Paint.Style.FILL, 5f)
@@ -71,7 +71,7 @@ class PhotoView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     }
 
     fun setImageMatrix(matrix: Matrix) {
-        this.matrix = matrix
+        this.matrix_ = matrix
         invalidate()
     }
 
@@ -83,8 +83,8 @@ class PhotoView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        if (matrix != null)
-            canvas.drawBitmap(bt!!, matrix!!, null)
+        if (matrix_ != null)
+            canvas.drawBitmap(bt!!, matrix_!!, null)
         else
             canvas.drawBitmap(bt!!, 0f, 0f, null)
 

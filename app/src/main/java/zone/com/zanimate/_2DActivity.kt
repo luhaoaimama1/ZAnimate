@@ -11,6 +11,7 @@ import android.animation.ValueAnimator
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
+import kotlinx.android.synthetic.main.a_2d.*
 import zone.com.zanimate.`object`.ObjectAnimatorHelper
 import zone.com.zanimate.`object`.SortAnimator
 import zone.com.zanimate.`object`.plugins.ExampleAnimator
@@ -18,12 +19,6 @@ import zone.com.zanimate.value.ValueAnimatorProxy
 
 class _2DActivity : AppCompatActivity() {
 
-    @BindView(R.id.tv)
-    internal var tv: TextView? = null
-    @BindView(R.id.tv2)
-    internal var tv2: TextView? = null
-    @BindView(R.id.progressBar)
-    internal var mProgressBar: ProgressBar? = null
 
     private var valueAnimator: ValueAnimator? = null
 
@@ -52,13 +47,13 @@ class _2DActivity : AppCompatActivity() {
     }
 
     private fun valueAnimator() {
-        mProgressBar!!.max = 100
+        progressBar.max = 100
         if (valueAnimator == null)
             valueAnimator = ValueAnimatorProxy.ofInt(0, 100)
                     .setRepeatCount(ValueAnimator.INFINITE)
                     .setDuration(1500)
                     .setRepeatMode(ValueAnimator.REVERSE)
-                    .addUpdateListener { animation -> mProgressBar!!.progress = animation.animatedValue as Int }.source()//可以直接start
+                    .addUpdateListener { animation -> progressBar!!.progress = animation.animatedValue as Int }.source()//可以直接start
         if (!valueAnimator!!.isRunning)
             valueAnimator!!.start()
     }

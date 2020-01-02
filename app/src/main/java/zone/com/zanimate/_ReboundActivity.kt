@@ -21,22 +21,11 @@ import com.zone.view.SquareImageView2
 import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
+import kotlinx.android.synthetic.main.a_rebound.*
 
 class _ReboundActivity : AppCompatActivity() {
 
-    @BindView(R.id.siv)
-    internal var siv: SquareImageView2? = null
-    @BindView(R.id.ll_main)
-    internal var ll_main: LinearLayout? = null
-    @BindView(R.id.seekBarFriction)
-    internal var seekBarFriction: SeekBar? = null
-    @BindView(R.id.seekTension)
-    internal var seekTension: SeekBar? = null
-    @BindView(R.id.tv_Friction)
-    internal var tv_Friction: TextView? = null
-    @BindView(R.id.tv_Tension)
-    internal var tv_Tension: TextView? = null
-    private var spring: Spring? = null
+    lateinit var spring: Spring
     private var tensionValue = SpringConfig.defaultConfig.tension.toInt()
     private var frictionValue = SpringConfig.defaultConfig.friction.toInt()
 
@@ -57,20 +46,20 @@ class _ReboundActivity : AppCompatActivity() {
     }
 
     private fun addReboundListener() {
-        spring!!.addListener(object : SimpleSpringListener() {
+        spring.addListener(object : SimpleSpringListener() {
             override fun onSpringUpdate(spring: Spring?) {
                 super.onSpringUpdate(spring)
                 val currentValue = spring!!.currentValue
                 val valueMap = SpringUtil.mapValueFromRangeToRange(currentValue, 0.0, 1.0, 1.0, 0.5)
-                siv!!.scaleX = valueMap.toFloat()
-                siv!!.scaleY = valueMap.toFloat()
+                siv.scaleX = valueMap.toFloat()
+                siv.scaleY = valueMap.toFloat()
             }
         })
 
-        siv!!.setOnTouchListener { v, event ->
+        siv.setOnTouchListener { v, event ->
             when (event.action) {
-                MotionEvent.ACTION_DOWN -> spring!!.endValue = 1.0
-                MotionEvent.ACTION_UP -> spring!!.endValue = 0.0
+                MotionEvent.ACTION_DOWN -> spring.endValue = 1.0
+                MotionEvent.ACTION_UP -> spring.endValue = 0.0
             }
             true
         }
@@ -81,7 +70,7 @@ class _ReboundActivity : AppCompatActivity() {
         when (view.id) {
             R.id.play -> {
                 siv!!.bringToFront()
-                spring!!.endValue = (if (spring!!.endValue == 0.0) 1 else 0).toDouble()
+                spring.endValue = (if (spring.endValue == 0.0) 1 else 0).toDouble()
             }
             R.id.playTogether -> playTogether()
         }
@@ -123,14 +112,14 @@ class _ReboundActivity : AppCompatActivity() {
 
 
     private fun updateSeekbar() {
-        seekTension!!.setOnSeekBarChangeListener(object : SimpleOnSeekBarChangeListener() {
+        seekTension.setOnSeekBarChangeListener(object : SimpleOnSeekBarChangeListener() {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 super.onProgressChanged(seekBar, progress, fromUser)
                 tensionValue = progress
                 updateConfig()
             }
         })
-        seekBarFriction!!.setOnSeekBarChangeListener(object : SimpleOnSeekBarChangeListener() {
+        seekBarFriction.setOnSeekBarChangeListener(object : SimpleOnSeekBarChangeListener() {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 super.onProgressChanged(seekBar, progress, fromUser)
                 frictionValue = progress
@@ -140,11 +129,11 @@ class _ReboundActivity : AppCompatActivity() {
     }
 
     private fun updateConfig() {
-        tv_Tension!!.text = " 拉力(tension):$tensionValue"
-        tv_Friction!!.text = " 摩擦力(friction):$frictionValue"
-        seekTension!!.progress = tensionValue
+        tv_Tension.text = " 拉力(tension):$tensionValue"
+        tv_Friction.text = " 摩擦力(friction):$frictionValue"
+        seekTension.progress = tensionValue
         seekBarFriction!!.progress = frictionValue
-        spring!!.springConfig = SpringConfig(tensionValue.toDouble(), frictionValue.toDouble())
+        spring.springConfig = SpringConfig(tensionValue.toDouble(), frictionValue.toDouble())
     }
 
 
