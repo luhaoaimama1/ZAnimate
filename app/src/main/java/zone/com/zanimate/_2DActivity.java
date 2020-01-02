@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.nineoldandroids.animation.ValueAnimator;
+import android.animation.ValueAnimator;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

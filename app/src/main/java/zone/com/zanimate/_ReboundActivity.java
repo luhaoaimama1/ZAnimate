@@ -1,5 +1,6 @@
 package zone.com.zanimate;
 
+import android.animation.ArgbEvaluator;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,8 +16,6 @@ import com.facebook.rebound.SpringChain;
 import com.facebook.rebound.SpringConfig;
 import com.facebook.rebound.SpringSystem;
 import com.facebook.rebound.SpringUtil;
-import com.nineoldandroids.animation.ArgbEvaluator;
-import com.nineoldandroids.view.ViewHelper;
 import com.zone.lib.utils.view.ViewUtils;
 import com.zone.view.SquareImageView2;
 import java.util.List;
@@ -62,8 +61,8 @@ public class _ReboundActivity extends AppCompatActivity {
                 super.onSpringUpdate(spring);
                 double currentValue = spring.getCurrentValue();
                 double valueMap = SpringUtil.mapValueFromRangeToRange(currentValue, 0, 1, 1, 0.5);
-                ViewHelper.setScaleX(siv, (float) valueMap);
-                ViewHelper.setScaleY(siv, (float) valueMap);
+                siv.setScaleX((float) valueMap);
+                siv.setScaleY((float) valueMap);
             }
         });
 

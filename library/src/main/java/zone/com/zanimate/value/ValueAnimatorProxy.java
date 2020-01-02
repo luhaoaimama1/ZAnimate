@@ -1,8 +1,9 @@
 package zone.com.zanimate.value;
 
-import com.nineoldandroids.animation.PropertyValuesHolder;
-import com.nineoldandroids.animation.TypeEvaluator;
-import com.nineoldandroids.animation.ValueAnimator;
+
+import android.animation.PropertyValuesHolder;
+import android.animation.TypeEvaluator;
+import android.animation.ValueAnimator;
 
 /**
  * Created by fuzhipeng on 16/8/23.

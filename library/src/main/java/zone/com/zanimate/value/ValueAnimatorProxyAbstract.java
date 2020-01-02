@@ -1,11 +1,10 @@
 package zone.com.zanimate.value;
 
-import android.view.animation.Interpolator;
-
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.animation.PropertyValuesHolder;
-import com.nineoldandroids.animation.TypeEvaluator;
-import com.nineoldandroids.animation.ValueAnimator;
+import android.animation.TimeInterpolator;
+import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.PropertyValuesHolder;
+import android.animation.TypeEvaluator;
 
 import java.util.ArrayList;
 
@@ -169,14 +168,14 @@ public abstract class ValueAnimatorProxyAbstract<T extends ValueAnimatorProxyAbs
     }
 
 
-    public T setInterpolator(Interpolator value) {
+    public T setInterpolator(TimeInterpolator value) {
         source.setInterpolator(value);
         checkChild();
         return child;
     }
 
 
-    public Interpolator getInterpolator() {
+    public TimeInterpolator getInterpolator() {
         return source.getInterpolator();
     }
 

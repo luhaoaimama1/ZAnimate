@@ -1,11 +1,12 @@
 package zone.com.zanimate.object;
+import android.animation.TimeInterpolator;
+import android.util.Property;
 import android.view.animation.Interpolator;
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.animation.ObjectAnimator;
-import com.nineoldandroids.animation.PropertyValuesHolder;
-import com.nineoldandroids.animation.TypeEvaluator;
-import com.nineoldandroids.animation.ValueAnimator;
-import com.nineoldandroids.util.Property;
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
+import android.animation.TypeEvaluator;
+import android.animation.ValueAnimator;
 
 import java.util.ArrayList;
 
@@ -62,7 +63,7 @@ public class ObjectAnimatorProxy  implements Cloneable {
         return source.getRepeatMode();
     }
 
-    public Interpolator getInterpolator() {
+    public TimeInterpolator getInterpolator() {
         return source.getInterpolator();
     }
 

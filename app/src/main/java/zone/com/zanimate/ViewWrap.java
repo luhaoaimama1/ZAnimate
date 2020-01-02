@@ -15,10 +15,10 @@ public class ViewWrap extends ValueAnimatorProxyAbstract<ViewWrap> {
     }
 
     @Override
-    public com.nineoldandroids.animation.ValueAnimator initDefaultValueAnimator() {
+    public android.animation.ValueAnimator initDefaultValueAnimator() {
         return ValueAnimatorProxy.ofFloat(0F, 1F)
 //                .setRepeatCount(ValueAnimatorProxy.INFINITE)
-                .setRepeatMode(com.nineoldandroids.animation.ValueAnimator.REVERSE)
+                .setRepeatMode(android.animation.ValueAnimator.REVERSE)
                 .setDuration(1000).source();
     }
 
@@ -28,9 +28,9 @@ public class ViewWrap extends ValueAnimatorProxyAbstract<ViewWrap> {
 
     @Override
     public ViewWrap start() {
-        addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
+        addUpdateListener(new android.animation.ValueAnimator.AnimatorUpdateListener() {
             @Override
-            public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator animation) {
+            public void onAnimationUpdate(android.animation.ValueAnimator animation) {
                 System.out.println("ViewWrap测试~继承好使不~"+animation.getAnimatedValue());
             }
         });
@@ -38,7 +38,7 @@ public class ViewWrap extends ValueAnimatorProxyAbstract<ViewWrap> {
     }
 
     @Override
-    public ViewWrap addUpdateListener(com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener listener) {
+    public ViewWrap addUpdateListener(android.animation.ValueAnimator.AnimatorUpdateListener listener) {
         return super.addUpdateListener(listener);
     }
 }

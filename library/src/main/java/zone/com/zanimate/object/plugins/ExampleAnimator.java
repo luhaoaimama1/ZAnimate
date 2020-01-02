@@ -1,6 +1,6 @@
 package zone.com.zanimate.object.plugins;
 
-import com.nineoldandroids.animation.AnimatorSet;
+import android.animation.AnimatorSet;
 
 import zone.com.zanimate.object.ObjectAnimatorHelper;
 

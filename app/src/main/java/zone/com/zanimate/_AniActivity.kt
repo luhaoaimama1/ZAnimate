@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
-import com.nineoldandroids.animation.ValueAnimator
+import android.animation.ValueAnimator
 import butterknife.ButterKnife
 import com.qyzc.medical.smartbodydevice.ui.adapter.delegate.core.ViewDelegatesDemo
 import com.zone.adapter3kt.QuickAdapter

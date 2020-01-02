@@ -1,13 +1,13 @@
 package zone.com.zanimate.object;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
 import android.view.animation.Interpolator;
-
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.animation.AnimatorSet;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
 
 /**
  * Created by fuzhipeng on 16/6/29.

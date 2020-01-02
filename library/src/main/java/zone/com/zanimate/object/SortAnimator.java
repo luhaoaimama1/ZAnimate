@@ -1,7 +1,7 @@
 package zone.com.zanimate.object;
 
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.animation.AnimatorListenerAdapter;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
