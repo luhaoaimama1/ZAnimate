@@ -44,7 +44,7 @@ class Roll3DImageView_Lib : FrameLayout {
 
         val matrix = Matrix()
         layer1!!.rotate(-rotateDegree, 0f, 0f)
-                .getMatrix(matrix, mCameraCorrect?.setPivot(CameraCorrect.PivotType.CenterTop))
+                .getMatrix(matrix, mCameraCorrect?.setPivot(CameraCorrect.PivotType.CenterTop)!!)
         matrix.postTranslate((viewWidth / 2).toFloat(), axisY.toFloat())
 
         drawScreen(canvas, first, matrix)
@@ -52,7 +52,7 @@ class Roll3DImageView_Lib : FrameLayout {
 
         val matrix2 = Matrix()
         layer2!!.rotate(90 - rotateDegree, 0f, 0f)
-                .getMatrix(matrix2, mCameraCorrect?.setPivot(CameraCorrect.PivotType.CenterBottom))
+                .getMatrix(matrix2, mCameraCorrect?.setPivot(CameraCorrect.PivotType.CenterBottom)!!)
         matrix2.postTranslate((viewWidth / 2).toFloat(), axisY.toFloat())
 
         drawScreen(canvas, second, matrix2)
