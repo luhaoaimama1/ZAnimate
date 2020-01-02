@@ -32,38 +32,67 @@ dependencies {
 }
 
 
-// build a jar with source files
-task sourcesJar(type: Jar) {
+apply plugin: 'org.jetbrains.dokka-android'
+
+//kotlin  生成文档
+task generateSourcesJar(type: Jar) {
+    group = 'jar'
     from android.sourceSets.main.java.srcDirs
     classifier = 'sources'
 }
 
 task javadoc(type: Javadoc) {
-    failOnError  false
-    source = android.sourceSets.main.java.sourceFiles
+    source = android.sourceSets.main.java.srcDirs
+    options.encoding = "UTF-8"
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    classpath += configurations.compile
 }
 
-// build a jar with javadoc
-task javadocJar(type: Jar, dependsOn: javadoc) {
+task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaTask) {
+    outputFormat = "javadoc"
+    outputDirectory = javadoc.destinationDir
+}
+
+
+task generateJavadoc(type: Jar, dependsOn: dokkaJavadoc) {
+    group = 'jar'
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
 
 artifacts {
-    archives sourcesJar
-    archives javadocJar
+    archives generateJavadoc
+    archives generateSourcesJar
 }
-repositories {
-    mavenCentral()
-}
-
-// uncomment to build a jar file in addition to the default aar file
-//android.libraryVariants.all { variant ->
-//    def name = variant.buildType.name
-//    def task = project.tasks.create "jar${name.capitalize()}", Jar
-//    task.dependsOn variant.javaCompile
-//    task.from variant.javaCompile.destinationDir
-//    artifacts.add('archives', task);
+//---------------jitPack 文档注释 Start------------------------
+//task sourcesJar(type: Jar) {
+//    classifier = 'sources'
+//    from android.sourceSets.main.java.sourceFiles
 //}
+//
+//task javadoc(type: Javadoc) {
+//    source = android.sourceSets.main.java.sourceFiles
+//    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+//}
+//
+//task javadocJar(type: Jar, dependsOn: javadoc) {
+//    classifier = 'javadoc'
+//    from javadoc.destinationDir
+//}
+//
+//task classesJar(type: Jar) {
+//    from "$buildDir/intermediates/classes/release"
+//}
+//
+//artifacts {
+////注意5.1以后不要使用 下面的classjar 不然引用的时候是jar而不是aar
+////    archives classesJar
+//    archives javadocJar
+//    archives sourcesJar
+//}
+//
+//tasks.withType(Javadoc) {
+//    options.addStringOption('Xdoclint:none', '-quiet')
+//    options.addStringOption('encoding', 'UTF-8')
+//    options.addStringOption('charSet', 'UTF-8')
+//}
+//---------------jitPack 文档注释Over------------------------
