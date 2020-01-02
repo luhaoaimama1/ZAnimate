@@ -57,7 +57,6 @@ class _AniActivity : BaseAppCompatActivity() {
 
     override fun setContentView() {
         setContentView(R.layout.a_ani)
-        ButterKnife.bind(this)
     }
 
     override fun updateKinds() {

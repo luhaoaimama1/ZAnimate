@@ -75,7 +75,7 @@ class _3DActivity_ : BaseActivity() {
         buttons[0] = bt_first
         buttons[1] = bt_Second
         buttons[2] = bt_Third
-        view_3D!!.setZLayerFinal(first, second, third!!)
+        view_3D.setZLayerFinal(first!!, second!!, third!!)
         gridAdapter()
         bt_first!!.performClick()
 
@@ -138,7 +138,7 @@ class _3DActivity_ : BaseActivity() {
                             now?.apply {
                                 setValue2(temp, this)
                             }
-                            view_3D?.setZLayerFinal(first, second, third)
+                            view_3D?.setZLayerFinal(first!!, second!!, third!!)
 
                         }
 
@@ -155,8 +155,8 @@ class _3DActivity_ : BaseActivity() {
                     }
                     ll_main.setOnClickListener {
                         value.text = "0"
-                        tpv.rang.start()
-                        tpv.rang.rang(0)
+                        tpv.rang?.start()
+                        tpv.rang?.rang(0)
                     }
                     now?.apply {
                         setValue(item, value, this)

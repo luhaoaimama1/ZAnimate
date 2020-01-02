@@ -36,7 +36,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     //butterknife
     implementation 'com.jakewharton:butterknife:10.0.0'
     kapt 'com.jakewharton:butterknife-compiler:10.0.0'
@@ -48,7 +48,7 @@ dependencies {
 //    implementation 'com.github.luhaoaimama1:ZAdapter:1.1.0'
     implementation 'com.github.luhaoaimama1:ZAdapter3KT:1.0.04'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    api "androidx.core:core-ktx:+"
+    api 'androidx.core:core-ktx:+'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
