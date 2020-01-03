@@ -27,6 +27,8 @@ allprojects {
 Step 2. Add the dependency
 
 > compile 'com.github.luhaoaimama1:ZAnimate:[Latest release](https://github.com/luhaoaimama1/ZAnimate/releases)'
+> 非androidX分支 compile 'com.github.luhaoaimama1:ZAnimate:1.0.21' 分支：notAndroidX
+
     
     
 
