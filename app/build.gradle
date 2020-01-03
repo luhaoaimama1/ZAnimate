@@ -40,7 +40,7 @@ dependencies {
     //butterknife
     implementation 'com.jakewharton:butterknife:10.0.0'
     kapt 'com.jakewharton:butterknife-compiler:10.0.0'
-    implementation project(':library')
+    implementation project(':ZAnimate')
 //    compile 'com.github.luhaoaimama1:ZAnimate:1.0.0'
     implementation 'com.github.luhaoaimama1:zone-sdk:2.1.02'
     implementation 'com.github.luhaoaimama1:ZView:1.0.36'
